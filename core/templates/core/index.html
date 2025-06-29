@@ -1,0 +1,179 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="home-page">
+
+  <!-- Hero Banner with Parallax Effect -->
+  <section class="hero-banner">
+    <div class="banner-content">
+      <h1 class="animated-text">Find Your Perfect Match</h1>
+      <p style="color: #e83e8c;">
+  Where Love Stories Begin
+</p>
+
+      <div class="cta-buttons">
+        <a href="{% url 'register' %}" class="btn-3d pulse-animation">
+          <i class="fas fa-heart"></i> Join Free
+        </a>
+        <a href="{% url 'candidates' %}" class="btn-3d secondary-btn">
+          <i class="fas fa-search"></i> Browse Profiles
+        </a>
+      </div>
+    </div>
+    <div class="parallax-background"></div>
+  </section>
+
+  <!-- About Matrimony Section -->
+  <section class="about-section">
+    <div class="section-header">
+      <h2 class="section-title">About <span class="highlight">Matrimony</span></h2>
+      <p class="section-subtitle">A trusted platform for meaningful connections</p>
+    </div>
+    <div class="about-content">
+      <p>
+        Matrimony is more than just a matchmaking site—it's a platform built on trust, security, and commitment.
+        We aim to bring together individuals who are genuinely looking for long-term relationships and life partners.
+        With a focus on cultural values, verified profiles, and compatibility-based recommendations,
+        we’ve helped thousands of people begin their love stories across the world.
+      </p>
+      <p>
+        Our mission is to foster healthy and happy relationships through transparency, innovation, and support.
+        Whether you are just beginning your search or ready to settle down, we are here to walk the journey with you.
+      </p>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features-section">
+    <div class="section-header">
+      <h2 class="section-title">Why Choose <span class="highlight">Matrimony</span>?</h2>
+      <p class="section-subtitle">Discover the benefits of joining our platform</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card card-3d">
+        <div class="icon-wrapper"><i class="fas fa-shield-alt"></i></div>
+        <h3>Verified Profiles</h3>
+        <p>Every profile is verified to ensure genuine users and a safe environment.</p>
+      </div>
+      <div class="feature-card card-3d">
+        <div class="icon-wrapper"><i class="fas fa-heart"></i></div>
+        <h3>Compatibility Matching</h3>
+        <p>Advanced algorithms analyze personality traits and preferences for better matches.</p>
+      </div>
+      <div class="feature-card card-3d">
+        <div class="icon-wrapper"><i class="fas fa-users"></i></div>
+        <h3>Community Support</h3>
+        <p>Guidance from relationship counselors and support from a caring community.</p>
+      </div>
+      <div class="feature-card card-3d">
+        <div class="icon-wrapper"><i class="fas fa-search"></i></div>
+        <h3>Advanced Search</h3>
+        <p>Use filters like profession, education, interests, and more to refine your search.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial Section -->
+  <section class="testimonial-highlight">
+    <div class="video-background">
+      <video autoplay muted loop>
+        <source src="{% static 'core/videos/couple.mp4' %}" type="video/mp4">
+      </video>
+      <div class="video-overlay"></div>
+    </div>
+    <div class="highlight-content">
+      <div class="testimonial-quote">
+        <i class="fas fa-quote-left"></i>
+        <h3>Matrimony helped us find each other despite living on different continents.</h3>
+        <i class="fas fa-quote-right"></i>
+      </div>
+      <div class="couple-info">
+        <img src="{% static 'core/images/couple-avatar.jpg' %}" alt="Happy Couple" class="couple-avatar" />
+        <div class="couple-details">
+          <p class="couple-name">Rahul & Priya</p>
+          <p class="wedding-date">Married June 2023</p>
+        </div>
+      </div>
+      <a href="{% url 'testimony' %}" class="btn-3d floating-btn">
+        <i class="fas fa-book-open"></i> Read More Success Stories
+      </a>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="how-it-works">
+    <div class="section-header">
+      <h2 class="section-title">How <span class="highlight">Matrimony</span> Works</h2>
+      <p class="section-subtitle">Begin your journey in four simple steps</p>
+    </div>
+    <div class="steps-container">
+      <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h3>Create Your Profile</h3>
+          <p>Share details about yourself and your ideal partner.</p>
+        </div>
+        <div class="step-icon"><i class="fas fa-user-edit"></i></div>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <h3>Get Matched</h3>
+          <p>Our smart engine recommends compatible profiles.</p>
+        </div>
+        <div class="step-icon"><i class="fas fa-heartbeat"></i></div>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <h3>Connect Securely</h3>
+          <p>Interact through a secure, private messaging system.</p>
+        </div>
+        <div class="step-icon"><i class="fas fa-comments"></i></div>
+      </div>
+      <div class="step">
+        <div class="step-number">4</div>
+        <div class="step-content">
+          <h3>Meet Your Match</h3>
+          <p>Plan your future together with our support and guidance.</p>
+        </div>
+        <div class="step-icon"><i class="fas fa-glass-cheers"></i></div>
+      </div>
+    </div>
+    <div class="cta-container">
+      <a href="{% url 'register' %}" class="btn-3d pulse-animation">
+        <i class="fas fa-rocket"></i> Start Your Journey Today
+      </a>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats-section">
+    <div class="stat-item">
+      <div class="stat-number" data-count="12500">12500</div>
+      <div class="stat-label">Successful Matches</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number" data-count="98">98</div>
+      <div class="stat-label">Satisfaction Rate</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number" data-count="42">58</div>
+      <div class="stat-label">Countries Served</div>
+    </div>
+  </section>
+
+  <!-- Final Call-To-Action Section -->
+  <section class="join-now-section">
+    <div class="join-content">
+      <h2>Ready to Begin Your Story?</h2>
+      <p>Thousands of successful couples started right here. Join now and take the first step toward your future.</p>
+      <a href="{% url 'register' %}" class="btn-3d pulse-animation">
+        <i class="fas fa-user-plus"></i> Join Now
+      </a>
+    </div>
+  </section>
+
+</div>
+{% endblock %}

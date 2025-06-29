@@ -1,0 +1,289 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Testimonies - Matrimony{% endblock %}
+
+{% block content %}
+<div class="testimonies-page">
+  <div class="testimonies-header">
+    <h1>Success Stories</h1>
+    <p style="color: #6f42c1; font-size: 1.1rem; margin-top: 8px;">
+  Real couples who found love through our service
+</p>
+  </div>
+
+  <div class="testimony-banner">
+    <img src="{% static 'core/images/testimony-banner.jpg' %}" alt="Happy Couples" class="banner-image">
+    <div class="banner-overlay">
+      <h2>Love Stories That Inspire</h2>
+      <p>Share your journey to inspire others</p>
+    </div>
+  </div>
+
+  <div class="submit-testimony">
+    <h2><i class="fas fa-heart"></i> Share Your Story</h2>
+    <form method="post" enctype="multipart/form-data" class="testimony-form">
+      {% csrf_token %}
+      <div class="form-row">
+        <div class="form-group">
+          <label for="id_name">Your Name(s)</label>
+          <div class="input-with-icon">
+            <i class="fas fa-user input-icon"></i>
+            {{ form.name }}
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="id_wedding_date">Wedding Date</label>
+          <div class="input-with-icon">
+            <i class="fas fa-calendar-alt input-icon"></i>
+            {{ form.wedding_date }}
+          </div>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="id_message">Your Story</label>
+        {{ form.message }}
+      </div>
+      
+      <div class="form-group">
+        <label for="id_photo">Upload Photo</label>
+        <div class="file-upload">
+          <i class="fas fa-camera"></i>
+          {{ form.photo }}
+          <span class="file-name">No file chosen</span>
+        </div>
+      </div>
+      
+      <button type="submit" class="submit-btn">
+        <i class="fas fa-paper-plane"></i> Share Your Story
+      </button>
+    </form>
+  </div>
+
+  <div class="all-testimonies">
+    <h2><i class="fas fa-heart"></i> Love Stories</h2>
+    
+    <div class="testimonies-grid">
+      <!-- Testimony 1 -->
+      <div class="testimony-card">
+        <div class="testimony-content">
+          <div class="quote-icon">
+            <i class="fas fa-quote-left"></i>
+          </div>
+          <p>We met through Matrimony in 2018 and instantly connected over our love for travel and adventure. After months of long conversations and shared dreams, we knew we had found something special. Our wedding in Goa was everything we dreamed of - surrounded by loved ones and the ocean breeze. Thank you for helping us find each other!</p>
+        </div>
+        <div class="testimony-footer">
+          <div class="couple-photo">
+            <img src="https://images.unsplash.com/photo-1529633982980-85a0ef9d1ac4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Rahul & Priya">
+          </div>
+          <div class="couple-info">
+            <h4>Rahul & Priya</h4>
+            <p class="wedding-date">
+              <i class="fas fa-calendar-alt"></i> 
+              March 15, 2020
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimony 2 -->
+      <div class="testimony-card">
+        <div class="testimony-content">
+          <div class="quote-icon">
+            <i class="fas fa-quote-left"></i>
+          </div>
+          <p>As two busy professionals, we never thought we'd find time for love. Matrimony's matching system brought us together based on our shared values and life goals. Our first date lasted 6 hours - we just couldn't stop talking! A year later, we tied the knot in a beautiful ceremony in Jaipur. Every day with you is a blessing.</p>
+        </div>
+        <div class="testimony-footer">
+          <div class="couple-photo">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Aditya & Neha">
+          </div>
+          <div class="couple-info">
+            <h4>Aditya & Neha</h4>
+            <p class="wedding-date">
+              <i class="fas fa-calendar-alt"></i> 
+              November 22, 2019
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimony 3 -->
+      <div class="testimony-card">
+        <div class="testimony-content">
+          <div class="quote-icon">
+            <i class="fas fa-quote-left"></i>
+          </div>
+          <p>After years of unsuccessful dating, I was about to give up on finding love. Then I received a message from the man who would become my husband. Our connection was instant - we bonded over our love for dogs, hiking, and old Bollywood movies. Our simple backyard wedding was perfect because we were finally together. Thank you Matrimony for making dreams come true!</p>
+        </div>
+        <div class="testimony-footer">
+          <div class="couple-photo">
+            <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Vikram & Ananya">
+          </div>
+          <div class="couple-info">
+            <h4>Vikram & Ananya</h4>
+            <p class="wedding-date">
+              <i class="fas fa-calendar-alt"></i> 
+              February 14, 2021
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimony 4 -->
+      <div class="testimony-card">
+        <div class="testimony-content">
+          <div class="quote-icon">
+            <i class="fas fa-quote-left"></i>
+          </div>
+          <p>We were matched by Matrimony's compatibility system and initially connected as friends. Over months of conversations, our friendship blossomed into love. Our families were thrilled when we announced our engagement! Our traditional Kerala wedding was a beautiful celebration of our love and cultural heritage. We're expecting our first child next spring!</p>
+        </div>
+        <div class="testimony-footer">
+          <div class="couple-photo">
+            <img src="https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Arjun & Meera">
+          </div>
+          <div class="couple-info">
+            <h4>Arjun & Meera</h4>
+            <p class="wedding-date">
+              <i class="fas fa-calendar-alt"></i> 
+              August 8, 2018
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimony 5 -->
+      <div class="testimony-card">
+        <div class="testimony-content">
+          <div class="quote-icon">
+            <i class="fas fa-quote-left"></i>
+          </div>
+          <p>Living in different countries, we never would have met without Matrimony. Despite the distance, we fell in love through video calls and handwritten letters. After a year of long-distance, I moved to Canada to be with her. Our multicultural wedding blended both our traditions beautifully. Now we're building our dream life together in Vancouver.</p>
+        </div>
+        <div class="testimony-footer">
+          <div class="couple-photo">
+            <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Rohan & Divya">
+          </div>
+          <div class="couple-info">
+            <h4>Rohan & Divya</h4>
+            <p class="wedding-date">
+              <i class="fas fa-calendar-alt"></i> 
+              June 5, 2019
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimony 6 -->
+      <div class="testimony-card">
+        <div class="testimony-content">
+          <div class="quote-icon">
+            <i class="fas fa-quote-left"></i>
+          </div>
+          <p>We were both skeptical about online matchmaking, but Matrimony proved us wrong! Our first meeting at a coffee shop turned into a 5-hour conversation. We discovered we had grown up just kilometers apart but never crossed paths. Our wedding was an intimate affair with close family, and we're currently renovating our first home together. Thank you for bringing us together!</p>
+        </div>
+        <div class="testimony-footer">
+          <div class="couple-photo">
+            <img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Karan & Pooja">
+          </div>
+          <div class="couple-info">
+            <h4>Karan & Pooja</h4>
+            <p class="wedding-date">
+              <i class="fas fa-calendar-alt"></i> 
+              December 12, 2020
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimony 7 -->
+      <div class="testimony-card">
+        <div class="testimony-content">
+          <div class="quote-icon">
+            <i class="fas fa-quote-left"></i>
+          </div>
+          <p>After previous failed relationships, we were both hesitant to try again. Matrimony's detailed profiles helped us understand each other deeply before we even met. Our connection was built on friendship first, which made our love even stronger. Our destination wedding in Udaipur was magical, and we're grateful every day for this second chance at love.</p>
+        </div>
+        <div class="testimony-footer">
+          <div class="couple-photo">
+            <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Amit & Shreya">
+          </div>
+          <div class="couple-info">
+            <h4>Amit & Shreya</h4>
+            <p class="wedding-date">
+              <i class="fas fa-calendar-alt"></i> 
+              October 10, 2019
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimony 8 -->
+      <div class="testimony-card">
+        <div class="testimony-content">
+          <div class="quote-icon">
+            <i class="fas fa-quote-left"></i>
+          </div>
+          <p>We connected over our shared passion for wildlife conservation. Our first date was at a national park - very unconventional but perfect for us! A year later, we got married under the stars in Ranthambore, surrounded by nature. Now we run an animal rescue center together. Matrimony didn't just help us find love - it helped us find a life partner who shares my deepest values.</p>
+        </div>
+        <div class="testimony-footer">
+          <div class="couple-photo">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Vivek & Tanvi">
+          </div>
+          <div class="couple-info">
+            <h4>Vivek & Tanvi</h4>
+            <p class="wedding-date">
+              <i class="fas fa-calendar-alt"></i> 
+              April 18, 2020
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimony 9 -->
+      <div class="testimony-card">
+        <div class="testimony-content">
+          <div class="quote-icon">
+            <i class="fas fa-quote-left"></i>
+          </div>
+          <p>As doctors with hectic schedules, we never had time to meet people. Matrimony's mobile app made it possible for us to connect during our rare free moments. Our first date was in the hospital cafeteria! Despite our busy lives, we've built a beautiful relationship based on mutual understanding and support. Our wedding was simple but filled with love, and we're excited to start our family soon.</p>
+        </div>
+        <div class="testimony-footer">
+          <div class="couple-photo">
+            <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Raj & Nisha">
+          </div>
+          <div class="couple-info">
+            <h4>Raj & Nisha</h4>
+            <p class="wedding-date">
+              <i class="fas fa-calendar-alt"></i> 
+              September 3, 2021
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimony 10 -->
+      <div class="testimony-card">
+        <div class="testimony-content">
+          <div class="quote-icon">
+            <i class="fas fa-quote-left"></i>
+          </div>
+          <p>After being widowed, I never thought I'd find love again. Matrimony's compassionate approach helped me connect with someone who understood my journey. We took things slowly, building trust and friendship first. Our wedding was a celebration of second chances, surrounded by our children and grandchildren. Every day together is a gift we don't take for granted.</p>
+        </div>
+        <div class="testimony-footer">
+          <div class="couple-photo">
+            <img src="https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Harish & Geeta">
+          </div>
+          <div class="couple-info">
+            <h4>Harish & Geeta</h4>
+            <p class="wedding-date">
+              <i class="fas fa-calendar-alt"></i> 
+              May 21, 2021
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

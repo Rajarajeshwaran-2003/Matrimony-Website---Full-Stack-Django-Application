@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: matrimony-site
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn matrimony_site.wsgi
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: matrimony_site.settings
+      - key: PYTHON_VERSION
+        value: 3.11
+    staticPublishPath: staticfiles
+
+
+## 🛠 Tech Stack
+
+# - Python 3.11
+# - Django 4.2+
+# - SQLite3 (default)
+
+---
+
+## 🚀 Deployment Instructions (Render.com)
+
+### 🔹 Step 1: Required Files
+
+# Create these files in your project root: 
+
+### ➤ `requirements.txt`

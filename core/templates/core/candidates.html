@@ -1,0 +1,176 @@
+{% extends 'core/base.html' %}
+{% block title %}Candidates - Matrimony{% endblock %}
+{% load static %}
+
+{% block content %}
+<div style="text-align: center; margin-top: 50px; margin-bottom: 30px;">
+  <h1 style="font-size: 2.3rem; font-weight: 700; color: #9c27b0;">All Candidates</h1>
+  <center>
+  <p style="font-size: 1.1rem; margin-top: 8px;">
+  <a href="{% url 'add_candidate' %}" 
+   id="pulseBtn"
+   style="
+  width: 30%;
+padding: 1rem;
+background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+color: white;
+border: none;
+border-radius: 50px;
+font-family: var(--font-main);
+font-weight: 600;
+text-transform: uppercase;
+letter-spacing: 1px;
+cursor: pointer;
+transition: var(--transition);
+margin-bottom: 1.5rem;
+font-size: 0.95rem;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 0.5rem;
+box-shadow: 0 4px 15px rgba(232, 62, 140, 0.3);
+animation: pulse 2s infinite;
+}
+   ">
+  + Add New Candidate
+</a>
+</center>
+
+
+{% if candidates %}
+  <div class="candidates-grid">
+    {% for candidate in candidates %}
+      <div class="candidate-card">
+        <h3>{{ candidate.name }}</h3>
+        {% if candidate.photo %}
+          <img src="{{ candidate.photo.url }}" alt="{{ candidate.name }}" class="candidate-photo">
+        {% else %}
+          <div class="no-photo">
+            <i class="fas fa-user-circle"></i>
+            <p>No photo available</p>
+          </div>
+        {% endif %}
+        <div class="candidate-details">
+          <p><i class="fas fa-birthday-cake"></i> Age: {{ candidate.age }}</p>
+          <p><i class="fas fa-venus-mars"></i> Gender: {{ candidate.gender }}</p>
+          <p><i class="fas fa-envelope"></i> Email: {{ candidate.email }}</p>
+          <p class="candidate-bio">{{ candidate.bio }}</p>
+        </div>
+      </div>
+    {% endfor %}
+    
+    <!-- Additional mock candidates -->
+    <div class="candidate-card">
+      <h3>Priya Sharma</h3>
+     <img src="{% static 'core/images/priya.jpg' %}" alt="Priya Sharma" class="candidate-photo">
+      <div class="candidate-details">
+        <p><i class="fas fa-birthday-cake"></i> Age: 28</p>
+        <p><i class="fas fa-venus-mars"></i> Gender: Female</p>
+        <p><i class="fas fa-envelope"></i> Email: priya.sharma@example.com</p>
+        <p class="candidate-bio">Software engineer who loves hiking and classical music.</p>
+      </div>
+    </div>
+    
+    <div class="candidate-card">
+      <h3>Rahul Patel</h3>
+      <img src="{% static 'core/images/1.jpg' %}"alt="Rahul Patel" class="candidate-photo">
+      <div class="candidate-details">
+        <p><i class="fas fa-birthday-cake"></i> Age: 32</p>
+        <p><i class="fas fa-venus-mars"></i> Gender: Male</p>
+        <p><i class="fas fa-envelope"></i> Email: rahul.p@example.com</p>
+        <p class="candidate-bio">Doctor with a passion for community service and traveling.</p>
+      </div>
+    </div>
+    
+    <div class="candidate-card">
+      <h3>Ananya Gupta</h3>
+      <img src="{% static 'core/images/2.png' %}"alt="Ananya Gupta" class="candidate-photo">
+      <div class="candidate-details">
+        <p><i class="fas fa-birthday-cake"></i> Age: 26</p>
+        <p><i class="fas fa-venus-mars"></i> Gender: Female</p>
+        <p><i class="fas fa-envelope"></i> Email: ananya.g@example.com</p>
+        <p class="candidate-bio">Fashion designer who enjoys painting and yoga.</p>
+      </div>
+    </div>
+    
+    <div class="candidate-card">
+      <h3>Vikram Singh</h3>
+      <img src="{% static 'core/images/3.png' %}"alt="Vikram Singh" class="candidate-photo">
+      <div class="candidate-details">
+        <p><i class="fas fa-birthday-cake"></i> Age: 30</p>
+        <p><i class="fas fa-venus-mars"></i> Gender: Male</p>
+        <p><i class="fas fa-envelope"></i> Email: vikram.s@example.com</p>
+        <p class="candidate-bio">Investment banker who is a foodie and loves to cook.</p>
+      </div>
+    </div>
+    
+    <div class="candidate-card">
+      <h3>Neha Reddy</h3>
+      <img src="{% static 'core/images/4.png' %}"alt="Neha Reddy" class="candidate-photo">
+      <div class="candidate-details">
+        <p><i class="fas fa-birthday-cake"></i> Age: 27</p>
+        <p><i class="fas fa-venus-mars"></i> Gender: Female</p>
+        <p><i class="fas fa-envelope"></i> Email: neha.r@example.com</p>
+        <p class="candidate-bio">Architect with a love for sustainable design and photography.</p>
+      </div>
+    </div>
+    
+    <div class="candidate-card">
+      <h3>Arjun Mehta</h3>
+      <img src="{% static 'core/images/5.png' %}"alt="Arjun Mehta" class="candidate-photo">
+      <div class="candidate-details">
+        <p><i class="fas fa-birthday-cake"></i> Age: 31</p>
+        <p><i class="fas fa-venus-mars"></i> Gender: Male</p>
+        <p><i class="fas fa-envelope"></i> Email: arjun.m@example.com</p>
+        <p class="candidate-bio">Entrepreneur running a tech startup, enjoys playing chess.</p>
+      </div>
+    </div>
+    
+    <div class="candidate-card">
+      <h3>Divya Iyer</h3>
+      <img src="{% static 'core/images/6.png' %}"alt="Divya Iyer" class="candidate-photo">
+      <div class="candidate-details">
+        <p><i class="fas fa-birthday-cake"></i> Age: 29</p>
+        <p><i class="fas fa-venus-mars"></i> Gender: Female</p>
+        <p><i class="fas fa-envelope"></i> Email: divya.i@example.com</p>
+        <p class="candidate-bio">Marketing professional who loves dancing and reading.</p>
+      </div>
+    </div>
+    
+    <div class="candidate-card">
+      <h3>Karan Malhotra</h3>
+      <img src="{% static 'core/images/7.png' %}"alt="Karan Malhotra" class="candidate-photo">
+      <div class="candidate-details">
+        <p><i class="fas fa-birthday-cake"></i> Age: 33</p>
+        <p><i class="fas fa-venus-mars"></i> Gender: Male</p>
+        <p><i class="fas fa-envelope"></i> Email: karan.m@example.com</p>
+        <p class="candidate-bio">Pilot with a passion for adventure sports and music.</p>
+      </div>
+    </div>
+    
+    <div class="candidate-card">
+      <h3>Shreya Joshi</h3>
+      <img src="{% static 'core/images/8.png' %}"alt="Shreya Joshi" class="candidate-photo">
+      <div class="candidate-details">
+        <p><i class="fas fa-birthday-cake"></i> Age: 25</p>
+        <p><i class="fas fa-venus-mars"></i> Gender: Female</p>
+        <p><i class="fas fa-envelope"></i> Email: shreya.j@example.com</p>
+        <p class="candidate-bio">Journalist who enjoys writing poetry and traveling.</p>
+      </div>
+    </div>
+    
+    <div class="candidate-card">
+      <h3>Aditya Rao</h3>
+      <img src="{% static 'core/images/9.png' %}"alt="Aditya Rao" class="candidate-photo">
+      <div class="candidate-details">
+        <p><i class="fas fa-birthday-cake"></i> Age: 29</p>
+        <p><i class="fas fa-venus-mars"></i> Gender: Male</p>
+        <p><i class="fas fa-envelope"></i> Email: aditya.r@example.com</p>
+        <p class="candidate-bio">Lawyer specializing in corporate law, loves playing tennis.</p>
+      </div>
+    </div>
+  </div>
+{% else %}
+  <p class="no-candidates">No candidates found.</p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,118 @@
+{% extends 'core/base.html' %}
+{% block title %}Register - Matrimony{% endblock %}
+
+{% block content %}
+<div class="auth-page">
+  <div class="auth-container">
+    <div class="auth-header">
+    <h1 style="color: #9c27b0;">
+  <i class="fas fa-heart heart-icon" style="color: #e83e8c; margin-right: 10px;"></i>
+  Create Your Account
+</h1>
+<p style="color: #6f42c1;">
+  Begin your journey to find your perfect match
+</p>
+    </div>
+
+    {% if form.errors %}
+      <div class="auth-messages">
+        {% for field in form %}
+          {% for error in field.errors %}
+            <div class="message error">
+              {{ error|escape }}
+            </div>
+          {% endfor %}
+        {% endfor %}
+        {% for error in form.non_field_errors %}
+          <div class="message error">
+            {{ error|escape }}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <form method="post" class="auth-form">
+      {% csrf_token %}
+      
+      <div class="form-row">
+        <div class="form-group">
+          <label for="id_first_name">First Name</label>
+          <div class="input-with-icon">
+            <i class="fas fa-user input-icon"></i>
+            {{ form.first_name }}
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="id_last_name">Last Name</label>
+          <div class="input-with-icon">
+            <i class="fas fa-user input-icon"></i>
+            {{ form.last_name }}
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="id_username">Username</label>
+        <div class="input-with-icon">
+          <i class="fas fa-at input-icon"></i>
+          {{ form.username }}
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="id_email">Email</label>
+        <div class="input-with-icon">
+          <i class="fas fa-envelope input-icon"></i>
+          {{ form.email }}
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="id_password1">Password</label>
+          <div class="input-with-icon">
+            <i class="fas fa-lock input-icon"></i>
+            {{ form.password1 }}
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="id_password2">Confirm Password</label>
+          <div class="input-with-icon">
+            <i class="fas fa-lock input-icon"></i>
+            {{ form.password2 }}
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="terms">
+          <input type="checkbox" id="terms" name="terms" required>
+          <label for="terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+        </div>
+      </div>
+
+      <button type="submit" class="auth-btn">
+        <i class="fas fa-user-plus"></i> Create Account
+      </button>
+
+      <div class="social-login">
+        <p>Or sign up with</p>
+        <div class="social-buttons">
+          <button type="button" class="social-btn google">
+            <i class="fab fa-google"></i> Google
+          </button>
+          <button type="button" class="social-btn facebook">
+            <i class="fab fa-facebook-f"></i> Facebook
+          </button>
+        </div>
+      </div>
+
+      <div class="auth-footer">
+        <p>Already have an account? <a href="{% url 'login' %}">Sign in</a></p>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
